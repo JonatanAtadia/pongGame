@@ -162,5 +162,30 @@ function changeDirection() {
       break;
   }
 }
-function updateScore() {}
-function resetGame() {}
+function updateScore() {
+  scoreText.textContent = `${playerOneScore} : ${playerTwoScore}`;
+}
+function resetGame() {
+  playerOneScore = 0;
+  playerTwoScore = 0;
+  paddleOne = {
+    with: 25,
+    height: 100,
+    x: 0,
+    y: 0,
+  };
+  paddleTwo = {
+    with: 25,
+    height: 100,
+    x: gameWidth - 25,
+    y: gameHeight - 100,
+  };
+  ballSpeed = 1;
+  ballX = 0;
+  ballY = 0;
+  ballXDirection = 0;
+  ballYDirection = 0;
+  updateScore();
+  clearInterval(intervalID);
+  gameStart();
+}
