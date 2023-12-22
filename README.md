@@ -17,16 +17,19 @@ This is a basic Pong game built with HTML5 Canvas and JavaScript. The game simul
 - Player One (Left Paddle):
 
 Up: 'W' key
+
 Down: 'S' key
 
 - Player Two (Right Paddle):
 
 Up: Up Arrow key
+
 Down: Down Arrow key
 
 ## Technologies Used
 
 HTML5 Canvas
+
 JavaScript
 
 ## App
