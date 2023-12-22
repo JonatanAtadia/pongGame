@@ -52,7 +52,10 @@ function nextTick() {
     nextTick();
   }, 10);
 }
-function clearBoard() {}
+function clearBoard() {
+  ctx.fillStyle = boardBackground;
+  ctx.fillRect(0, 0, gameWidth, gameHeight);
+}
 function drawPaddles() {
   ctx.strokeStyle = paddleBorder;
 
@@ -66,8 +69,46 @@ function drawPaddles() {
 }
 function createBall() {}
 function moveBall() {}
-function drawBall(ballX, ballY) {}
+function drawBall(ballX, ballY) {
+  ctx.fillStyle = ballColor;
+  ctx.strokeStyle = ballBorder;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(ballX, ballY, ballRadius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.fill();
+}
 function checkCollision() {}
-function changeDirection() {}
+function changeDirection() {
+  const keyPressed = event.keyCode;
+  const paddleOneUp = 87;
+  const paddleOneDown = 83;
+  const paddleTwoUp = 38;
+  const paddleTwoDown = 40;
+
+  switch (keyPressed) {
+    case paddleOneUp:
+      if (paddleOne.y > 0) {
+        paddleOne.y -= paddleSpeed;
+      }
+      break;
+    case paddleOneDown:
+      if (paddleOne.y < gameHeight - paddleOne.height) {
+        paddleOne.y += paddleSpeed;
+      }
+      break;
+
+    case paddleTwoUp:
+      if (paddleTwo.y > 0) {
+        paddleTwo.y -= paddleSpeed;
+      }
+      break;
+    case paddleTwoDown:
+      if (paddleTwo.y < gameHeight - paddleTwo.height) {
+        paddleTwo.y += paddleSpeed;
+      }
+      break;
+  }
+}
 function updateScore() {}
 function resetGame() {}
