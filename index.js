@@ -5,7 +5,7 @@ const resetBtn = document.querySelector('#resetBtn');
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
 const boardBackground = 'green';
-const paddleOneColor = 'blue';
+const paddleOneColor = 'aqua';
 const paddleTwoColor = 'red';
 const paddleBorder = 'black';
 const ballColor = 'yellow';
@@ -35,3 +35,27 @@ let paddleTwo = {
 
 window.addEventListener('keydown', changeDirection);
 resetBtn.addEventListener('click', resetGame);
+
+gameStart();
+
+function gameStart() {}
+function nextTick() {}
+function clearBoard() {}
+function drawPaddles() {
+  ctx.strokeStyle = paddleBorder;
+
+  ctx.fillStyle = paddleOneColor;
+  ctx.fillRect(paddleOne.x, paddleOne.y, paddleOne.with, paddleOne.height);
+  ctx.strokeRect(paddleOne.x, paddleOne.y, paddleOne.with, paddleOne.height);
+
+  ctx.fillStyle = paddleTwoColor;
+  ctx.fillRect(paddleTwo.x, paddleTwo.y, paddleTwo.with, paddleTwo.height);
+  ctx.strokeRect(paddleTwo.x, paddleTwo.y, paddleTwo.with, paddleTwo.height);
+}
+function createBall() {}
+function moveBall() {}
+function drawBall() {}
+function checkCollision() {}
+function changeDirection() {}
+function updateScore() {}
+function resetGame() {}
